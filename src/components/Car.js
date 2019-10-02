@@ -14,10 +14,12 @@ const Car = (props) => {
             <CardContent>
                 <Container className="car-container">
                     <Paper className="car-paper">
-                    {currentCar.Name}
-                        <Chip>
-                            {currentCar.id}
-                        </Chip>
+                        {currentCar.Name}
+                        <br></br>
+                        {Object.keys(currentCar).map((key, idx) => {
+                            return <Chip label={`${key}: ${currentCar[key]}`} />
+                        })}
+
                     </Paper>
                 </Container>
             </CardContent>
